@@ -7,7 +7,9 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "deploy": "npm run generate && echo 'Build complete! Push to GitHub to deploy via GitHub Actions.'",
+    "deploy:preview": "npm run generate && npm run preview"
   },
   "dependencies": {
     "nuxt": "^4.2.1",

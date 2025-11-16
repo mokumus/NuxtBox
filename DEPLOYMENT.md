@@ -9,20 +9,19 @@ This guide will help you deploy your 3D Print Gallery to GitHub Pages.
 
 ## Setup Steps
 
-### 1. Update Repository Name in Config
+### 1. Repository Configuration
 
-Edit `nuxt.config.ts` and update the `baseURL` to match your repository name:
+The repository is already configured for **NuxtBox**:
+- Repository: [mokumus/NuxtBox](https://github.com/mokumus/NuxtBox)
+- Base URL: `/NuxtBox/` (already set in `nuxt.config.ts`)
+
+If you need to change the repository name, edit `nuxt.config.ts`:
 
 ```typescript
 app: {
   baseURL: process.env.NODE_ENV === 'production' ? '/YOUR-REPO-NAME/' : '/',
   // Replace 'YOUR-REPO-NAME' with your actual GitHub repository name
 }
-```
-
-For example, if your repo is `3d-print-gallery`, it should be:
-```typescript
-baseURL: process.env.NODE_ENV === 'production' ? '/3d-print-gallery/' : '/',
 ```
 
 ### 2. Enable GitHub Pages
@@ -54,12 +53,34 @@ You can monitor the deployment progress in the **Actions** tab of your repositor
 
 After deployment completes (usually 2-3 minutes), your site will be available at:
 ```
-https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/
+https://mokumus.github.io/NuxtBox/
 ```
 
-## Manual Deployment
+You can also access it via the repository's Pages link shown on GitHub.
 
-If you want to deploy manually:
+## Deployment Scripts
+
+### Quick Deploy
+
+```bash
+# Build and prepare for deployment
+npm run deploy
+```
+
+This will:
+1. Generate the static site
+2. Show instructions to push to GitHub
+
+### Preview Before Deploying
+
+```bash
+# Build and preview locally (with production baseURL)
+npm run deploy:preview
+```
+
+This builds the site with production settings and starts a local preview server so you can test before pushing.
+
+### Manual Build
 
 ```bash
 # Build the site

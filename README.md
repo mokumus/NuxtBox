@@ -54,11 +54,32 @@ Visit `http://localhost:3000` to see your gallery.
 
 See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions.
 
-**Quick steps:**
-1. Update `baseURL` in `nuxt.config.ts` to match your repository name
-2. Push code to GitHub
-3. Enable GitHub Pages in repository settings (use GitHub Actions)
-4. Your site will be automatically deployed!
+**Quick deployment:**
+
+```bash
+# Build and prepare for deployment
+npm run deploy
+
+# Then push to GitHub
+git add .
+git commit -m "Deploy to GitHub Pages"
+git push origin main
+```
+
+**Preview before deploying:**
+
+```bash
+# Build and preview locally with production settings
+npm run deploy:preview
+```
+
+**Automatic deployment:**
+
+1. Enable GitHub Pages in repository settings (use GitHub Actions)
+2. Push code to `main` branch
+3. GitHub Actions will automatically build and deploy!
+
+Your site will be available at: **https://mokumus.github.io/NuxtBox/**
 
 ## Project Structure
 
